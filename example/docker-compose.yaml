@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  prom:
+    image: prom/prometheus:v2.19.0-rc.0 
+  enphase-exporter:
+    image: prometheus-envoy:latest
+
