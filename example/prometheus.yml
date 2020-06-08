@@ -1,5 +1,5 @@
 scrape_configs:
-  - job_name: 'prometheus-custom-collector'
+  - job_name: 'prometheus-envoy-collector'
     static_configs:
       - targets:
         - '192.168.1.137'
