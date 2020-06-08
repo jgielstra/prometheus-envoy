@@ -9,9 +9,27 @@ services:
     - --config.file=/etc/prometheus/prometheus.yml
     volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
   enphase-exporter:
     image: prometheus-envoy:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
   grafana:
     image: grafana/grafana
     ports:
     - 3000:3000
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
